@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Moon Orbiting Earth - No Glow</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: radial-gradient(ellipse at center, #000000 0%, #0a0a0a 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    .space {
+      position: relative;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,255,255,0.05) 2px, transparent 2px),
+                  radial-gradient(circle, rgba(255,255,255,0.05) 2px, transparent 2px);
+      background-position: 0 0, 50px 50px;
+      background-size: 100px 100px;
+      border-radius: 50%;
+    }
+
+    .earth {
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle at 30% 30%, #3b6dde, #1a3bb8);
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 3px solid #1a3bb8;
+    }
+
+    .orbit {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 400px;
+      height: 400px;
+      margin-left: -200px;
+      margin-top: -200px;
+      border: 1.5px dotted rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      animation: rotate 6s linear infinite;
+      transform-origin: center center;
+    }
+
+    .moon {
+      width: 40px;
+      height: 40px;
+      background: radial-gradient(circle at 30% 30%, #bbb, #666);
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      transform: translate(-50%, -50%);
+      border: 2px solid #999;
+    }
+
+    @keyframes rotate {
+      0%   { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="space">
+    <div class="earth"></div>
+    <div class="orbit">
+      <div class="moon"></div>
+    </div>
+  </div>
+</body>
+</html>
